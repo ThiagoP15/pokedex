@@ -2,12 +2,29 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Pokemon Solid', sans-serif;
+                                                
 }
 
 body {
-    background-color: #eff3ff;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 .container {
     width: 350px;
@@ -46,12 +63,14 @@ body {
 .poke-name {
     text-align: center;
     font-weight: 600;
+    letter-spacing: 5px;
 }
 
 .types {
     display: flex;
     justify-content: space-around;
     margin: 20px 0 40px 0;
+    letter-spacing: 10px;
 }
 
 .hp span,
@@ -63,7 +82,7 @@ body {
 .types span {
     padding: 5px 20px;
     border-radius: 20px;
-    color: #ffffff;
+    color: black;
 }
 
 .stats {
@@ -83,8 +102,10 @@ body {
     font-size: 18px;
     background-color: #101010;
     color: #ffffff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     position: relative;
     margin: 30px auto;
     border: none;
     border-radius: 5px;
+    letter-spacing: 5px;
 }

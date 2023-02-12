@@ -16,9 +16,13 @@ const typeColor = {
     rock: "#F5DEB3",
     water: "#1E90FF",
   };
-  const url = "https://pokeapi.co/api/v2/pokemon/";
+  const url = `https://pokeapi.co/api/v2/pokemon/`;
   const card = document.getElementById("card");
   const btn = document.getElementById("btn");
+  const form = document.getElementById("form");
+  const input = document.getElementById("input_search");
+
+  let searchPoke = 1;
   
   let getPokeData = () => {
    
@@ -44,6 +48,11 @@ const typeColor = {
     const statAttack = data.stats[1].base_stat;
     const statDefense = data.stats[2].base_stat;
     const statSpeed = data.stats[5].base_stat;
+    const pokeNumber = data.id;
+    const searchPoke = data.id;
+    if (data) {
+      input.value = ''
+    }
   
    
     const themeColor = typeColor[data.types[0].type.name];
@@ -55,6 +64,7 @@ const typeColor = {
           </p>
           <img src=${imgSrc} />
           <h2 class="poke-name">${pokeName}</h2>
+          <h2 class="poke-number">#${pokeNumber}</h2>
           <div class="types">
            
           </div>

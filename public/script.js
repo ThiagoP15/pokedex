@@ -31,22 +31,22 @@ const typeColor = {
   
   const url = `https://pokeapi.co/api/v2/pokemon/`;
   const card = document.getElementById("card");
-  const btn = document.getElementById("btn");
+  // const btn = document.getElementById("btn");
   const form = document.getElementById("form");
   const input = document.getElementById("input_search");
 
   
-  let getPokeData = () => {
+  // let getPokeData = () => {
    
-    let id = Math.floor(Math.random() * 898) + 1;
+  //   let id = Math.floor(Math.random() * 898) + 1;
    
-    const finalUrl = url + id;
+  //   const finalUrl = url + id;
     
-    fetch(finalUrl)
-      .then((response) => response.json())
-      .then((data) => {
-      });
-  };
+  //   fetch(finalUrl)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //     });
+  // };
   const renderizaPokemon = async (pokemon) => {
 
     const data = await fetchPokemon(pokemon);
@@ -117,6 +117,5 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     renderizaPokemon(input.value.toLowerCase());
 });
-  btn.addEventListener("click", getPokeData);
-  window.addEventListener("load", getPokeData);
+
  renderizaPokemon(searchPoke);
